@@ -87,9 +87,9 @@ function handle(ws,msg){
 }
 const server=http.createServer((req,res)=>{
  const url=new URL(req.url,'http://localhost');const rel=url.pathname==='/'?'index.html':url.pathname.slice(1);
- if(!['index.html','client.js','art.js'].includes(rel)){res.writeHead(404);return res.end('Not found');}
+ if(!['index.html','client.js','art.js','martyrs.css','martyrs-ui.js'].includes(rel)){res.writeHead(404);return res.end('Not found');}
  const file=path.join(__dirname,'public',rel);
- fs.readFile(file,(err,data)=>{if(err){res.writeHead(404);return res.end('Not found');}res.writeHead(200,{'Content-Type':rel.endsWith('.js')?'application/javascript; charset=utf-8':'text/html; charset=utf-8','Cache-Control':'no-store','X-Content-Type-Options':'nosniff'});res.end(data);});
+ fs.readFile(file,(err,data)=>{if(err){res.writeHead(404);return res.end('Not found');}res.writeHead(200,{'Content-Type':rel.endsWith('.js')?'application/javascript; charset=utf-8':rel.endsWith('.css')?'text/css; charset=utf-8':'text/html; charset=utf-8','Cache-Control':'no-store','X-Content-Type-Options':'nosniff'});res.end(data);});
 });
 const wss=new WebSocketServer({server,maxPayload:16000});
 wss.on('connection',ws=>{
