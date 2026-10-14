@@ -1,0 +1,13 @@
+{
+  "name": "nwo-online-duel",
+  "version": "0.21.0",
+  "private": true,
+  "description": "NWO Duel Lab multiplayer 1vs1 a codice stanza",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node test.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

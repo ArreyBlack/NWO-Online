@@ -1,0 +1,8 @@
+services:
+  - type: web
+    name: nwo-duel-online
+    runtime: node
+    plan: free
+    buildCommand: echo Ready
+    startCommand: node server.js
+    healthCheckPath: /
