@@ -43,3 +43,42 @@ h1{font-family:Georgia,serif;color:var(--gold);text-shadow:4px 4px #000}
 .notice{background:#070f3477;border-left:5px solid #ffdb57;border-radius:0;color:#fff4c3}
 .code{color:var(--gold);text-shadow:3px 3px #000}
 @media(max-width:650px){.zone{min-height:120px;padding:3px}.card{padding:3px}.card .artbox{height:58px}.card .name{font-size:9px;min-height:25px}.card .stats{font-size:9px}.hand>div{width:125px}.hand{justify-content:flex-start}.hand .card .artbox{height:90px}}
+
+/* MARTYRS board and interaction overlays */
+.m-statbar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:12px 18px}
+.m-game-sub{color:#d5e4ff;font-size:.85rem;margin-top:4px}
+.m-stats{display:flex;gap:8px;flex-wrap:wrap}
+.m-pill{display:inline-flex;gap:5px;align-items:center;border:2px solid #6685d5;background:#0a1641;color:#ffe7a9;padding:5px 9px;font-size:.78rem;white-space:nowrap}
+.m-pill strong{color:#fff;letter-spacing:.04em}
+.m-toolbar{display:flex;gap:7px;flex-wrap:wrap}
+.m-toolbar button{font-size:.8rem;padding:7px 10px}
+.m-oppdice{display:flex;align-items:center;flex-wrap:wrap;gap:7px;padding:7px 0;border-bottom:1px solid #a1baee}
+.m-small-die{display:inline-flex;flex-direction:column;text-align:center;border:2px solid #a8bff5;background:#0b204c;color:#ffe6a5;padding:3px 7px;border-radius:4px;font-weight:900;min-width:38px}
+.m-small-die small{font-size:.6rem;font-weight:400;color:#d4defe}
+.m-small-die.inactive{opacity:.3}
+.m-pickable{outline:3px solid #ffe26e;cursor:pointer;transition:transform .15s}
+.m-pickable:hover{transform:translateY(-4px)}
+.m-hint{color:#e8d18f;font-size:.75rem;margin-top:-7px}
+.m-overlay{position:fixed;inset:0;background:#030617db;z-index:200;display:none;align-items:center;justify-content:center;padding:15px;backdrop-filter:blur(4px)}
+.m-overlay.visible{display:flex}
+.m-modal{position:relative;width:min(700px,97vw);max-height:94vh;overflow:auto;padding:25px;background:linear-gradient(#24499d,#101b49);border:5px solid #f5d684;box-shadow:0 0 0 4px #071029,0 20px 90px #000;color:#fff}
+.m-modal.m-wide{width:min(850px,97vw)}
+.m-close{position:absolute;right:10px;top:10px;z-index:1;background:#ad3950;color:white;padding:3px 9px;font-size:1.1rem}
+.m-modal-body{display:grid;grid-template-columns:minmax(140px,42%) 1fr;gap:20px;align-items:start}
+.m-detail-art{border:5px ridge #deba61;min-height:210px;display:grid;place-items:center;background:radial-gradient(#cad1aa,#664a47)}
+.m-detail-art img{width:100%;max-height:370px;object-fit:contain}
+.m-fallback{font-size:6rem}
+.m-detail-content{padding-top:20px}
+.m-detail-content h2{font-size:clamp(1.2rem,2.5vw,2.2rem);margin:12px 0}
+.m-tag{color:#ffe18c;letter-spacing:.1em;font-size:.85rem}
+.m-card-id{color:#bdcff7;font-size:.85rem}
+.m-attributes{display:flex;flex-wrap:wrap;gap:5px;margin:15px 0}
+.m-effect{white-space:pre-wrap;background:#07112b;border:2px solid #688ee3;padding:15px;line-height:1.5;min-height:75px}
+.m-graves h2,.m-graves h3{margin:15px 0 8px}
+.m-grave-grid{display:flex;flex-wrap:wrap;gap:6px}
+.m-grave-card{font-size:.74rem;background:#18346f;color:#e3d6af;border:1px solid #8ca5de;padding:6px 8px}
+.zone:has(.card){cursor:pointer}
+#cardActions{padding:8px;background:#0a1748ad;border:1px solid #5e81bf;min-height:42px}
+#cardActions button{font-size:.82rem}
+#gameNotice{font-size:.85rem}
+@media(max-width:680px){.m-modal-body{grid-template-columns:1fr}.m-detail-art{min-height:120px}.m-detail-art img{max-height:200px}.m-detail-content{padding-top:0}.m-modal{padding:14px}.m-statbar{padding:10px}.m-stats{gap:4px}.m-pill{padding:3px 6px}}
