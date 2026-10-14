@@ -1,0 +1,45 @@
+/* NWO MARTYRS multiplayer presentation layer. All gameplay stays server-authoritative. */
+:root{--gold:#ffd84a;--ink:#0a0f2a;--win1:#2350b4;--win2:#122a6e;--winb:#eef4ff;--text:#f4f7ff;--muted:#bccbf0;color-scheme:dark}
+body{color:var(--text);font:500 16px/1.35 'Pixelify Sans',system-ui,sans-serif;background-color:#070b22;background-image:radial-gradient(#1b2766 1px,transparent 1px);background-size:6px 6px}
+header.wrap{max-width:none;padding:12px max(16px,calc((100vw - 1280px)/2));background:linear-gradient(#1d3384,#0e1a4a);border-bottom:4px solid var(--winb)}
+header strong{color:var(--gold)!important;font-size:1.65rem;text-shadow:3px 3px #000}
+.panel{border-radius:4px;background:linear-gradient(180deg,var(--win1),var(--win2));border:3px solid var(--winb);box-shadow:0 0 0 3px var(--ink),5px 5px 0 3px #0008}
+button{border-radius:3px;background:linear-gradient(#ffe27a,#e0a92c);border:2px solid #fff8d2;box-shadow:2px 3px 0 #090d27;color:#271b00;text-transform:uppercase;letter-spacing:.035em}
+button.alt{background:linear-gradient(#3a69d4,#1a3a8f);color:#fff}
+button.danger{background:linear-gradient(#d8546a,#8f2440);color:#fff}
+input,select{border-radius:2px;background:#0a0f2a;border:2px solid #6d88d6}
+h1,h2,h3{color:#ffe88d;text-shadow:2px 2px 0 #0c1030}
+h1{font-family:Georgia,serif;color:var(--gold);text-shadow:4px 4px #000}
+.label{color:var(--gold)}.muted{color:var(--muted)}
+.life{color:#fff5c9;text-shadow:2px 2px #7b223c}
+.status{border-radius:2px;background:#0a0f2a;border:2px solid #7994dd}
+.arena{max-width:1230px;margin:auto}
+.arena>.panel:first-child,.arena>.panel:nth-child(3){position:relative;background:linear-gradient(165deg,#2352ab,#0d245b)}
+.zones{gap:12px}
+.zone{background:repeating-linear-gradient(45deg,#16295d,#16295d 7px,#192f6a 7px,#192f6a 14px);border:3px solid #88a7ea;border-radius:4px;min-height:170px;box-shadow:inset 0 0 0 3px #0b163a,3px 4px #060c23;cursor:pointer}
+.zone.mine{border-color:#e1be58}
+.zone:has(.card:hover){border-color:#fff8a6}
+.card{--frame:linear-gradient(155deg,#e1a764,#a06029);border:3px solid #1e100b;border-radius:8px;box-shadow:inset 0 0 0 2px #ffffff55,4px 5px #000;display:flex;align-items:stretch;gap:4px;padding:6px;background:var(--frame);color:#221b14}
+.card[data-rarity="L"]{--frame:linear-gradient(115deg,#b77d14,#fff1ae 30%,#c39829 56%,#ffed86 85%);border-color:#664100}
+.card[data-kind="mg"]{--frame:linear-gradient(#3ab79a,#1d7a66)}
+.card[data-kind="tr"]{--frame:linear-gradient(#c45aa8,#7d2c6c)}
+.card .name{order:0;width:100%;background:linear-gradient(#fffaf0,#efe0b8);color:#1d160d;border:2px solid #4f3519;border-radius:4px;font-size:.78rem;padding:3px 4px;line-height:1.1;min-height:30px;display:grid;place-items:center}
+.card .artbox{order:1;width:100%;height:100px;position:relative;border:2px solid #4f3519;border-radius:4px;overflow:hidden;background:radial-gradient(#f4e7b9,#7a6348)}
+.card[data-element="F"] .artbox{background:radial-gradient(#ffd08a,#d1502a 50%,#4a1210)}
+.card[data-element="A"] .artbox{background:radial-gradient(#e6fbff,#56aee6 50%,#123c6e)}
+.card[data-element="N"] .artbox{background:radial-gradient(#f2fbc8,#6db35a 50%,#1d4428)}
+.card[data-element="R"] .artbox{background:radial-gradient(#f6efd8,#a89c7c 50%,#3a352c)}
+.card[data-element="C"] .artbox{background:radial-gradient(#fffbe0,#a796e0 50%,#2a1f58)}
+.card .artbox img{height:100%;width:100%;max-width:none;object-fit:contain;image-rendering:auto;filter:drop-shadow(0 3px #0006)}
+.card .stats{order:2;background:#f6ecd0;color:#352314;border:2px solid #4f3519;padding:3px 4px;border-radius:4px;font-size:.73rem;line-height:1.25;font-weight:700;min-height:24px;width:100%}
+.card.sel{outline:4px solid var(--gold);transform:translateY(-7px)}
+.hand{padding:18px 12px 12px;gap:5px;justify-content:center}
+.hand>div{width:min(150px,24%);flex-shrink:0;transition:transform .12s}
+.hand>div:hover{transform:translateY(-6px);z-index:2}
+.hand .card{min-height:204px}
+.hand .card .artbox{height:115px}
+.die{border:3px solid #d2b76d;border-radius:5px;background:#0c1745;color:#ffedaf;box-shadow:2px 3px #000}
+.log{background:#081336;border:2px inset #7188c5;border-radius:0;color:#cfdcff}
+.notice{background:#070f3477;border-left:5px solid #ffdb57;border-radius:0;color:#fff4c3}
+.code{color:var(--gold);text-shadow:3px 3px #000}
+@media(max-width:650px){.zone{min-height:120px;padding:3px}.card{padding:3px}.card .artbox{height:58px}.card .name{font-size:9px;min-height:25px}.card .stats{font-size:9px}.hand>div{width:125px}.hand{justify-content:flex-start}.hand .card .artbox{height:90px}}
